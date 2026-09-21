@@ -1,0 +1,16 @@
+.student-dashboard { text-align: left; }
+.lg-stat-card.flex-column { align-items: flex-start; }
+
+.my-course-card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.04);
+  height: 100%;
+}
+.my-course-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}

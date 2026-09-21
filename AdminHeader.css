@@ -1,0 +1,62 @@
+.admin-header {
+  background: #0f172a;
+  padding: 0 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.admin-header-inner {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.admin-brand {
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: -0.01em;
+}
+
+.admin-nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  margin: 0;
+  padding: 0;
+}
+
+.admin-nav-links li a {
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.admin-nav-links li a:hover,
+.admin-nav-links li a.active { color: #fff; }
+
+.admin-logout-btn {
+  background: #1a56db;
+  color: #fff;
+  border: none;
+  padding: 0.4rem 1rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: filter 0.2s ease;
+}
+
+.admin-logout-btn:hover { filter: brightness(1.1); }
+
+@media (max-width: 900px) {
+  .admin-header-inner { flex-direction: column; height: auto; padding: 1rem 0; gap: 0.8rem; }
+  .admin-nav-links { flex-wrap: wrap; justify-content: center; gap: 0.8rem 1.2rem; }
+}

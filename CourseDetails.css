@@ -1,0 +1,71 @@
+.lg-course-subject {
+  display: inline-block;
+  background: rgba(11,92,254,0.1);
+  color: #0b5cfe;
+  font-weight: 600;
+  font-size: 0.8rem;
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+.course-about-card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 16px;
+  padding: 28px;
+  margin-bottom: 24px;
+  text-align: left;
+}
+.course-objectives {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 8px;
+}
+.course-meta-box {
+  background: #f8f9fb;
+  border-radius: 12px;
+  padding: 14px 8px;
+  font-size: 0.85rem;
+  color: #444;
+}
+.course-meta-box i {
+  color: #0b5cfe;
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+  display: block;
+}
+.topic-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 14px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+.topic-row:last-child { border-bottom: none; }
+.topic-status {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.topic-status.done { background: #e6f4ea; color: #1e7e34; }
+.topic-status.current { background: #fff4e0; color: #d97706; }
+.topic-status.locked { background: #f0f0f2; color: #9a97a3; }
+
+.course-sidebar {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 16px;
+  padding: 20px;
+  position: sticky;
+  top: 20px;
+  text-align: left;
+}

@@ -1,0 +1,48 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isAdmin() {
+      return isSignedIn() &&
+        get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin';
+    }
+
+    // users/{uid} — created by AuthContext on first login
+    match /users/{uid} {
+      allow read: if isSignedIn() && (request.auth.uid == uid || isAdmin());
+      allow create: if isSignedIn() && request.auth.uid == uid;
+      allow update: if isAdmin(); // role changes should go through an admin, not the client
+    }
+
+    // courses — public read (so the Courses page works for logged-out visitors),
+    // writes restricted to admins
+    match /courses/{courseId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    // quizzes — readable by any signed-in user (needed to attempt a quiz),
+    // writes restricted to admins.
+    // NOTE: correctAnswer is sent to the client as part of this document, so a
+    // technically-inclined student could read it from the network tab. That's
+    // an acceptable simplification for a college project; if you need to stop
+    // that, move scoring into a Cloud Function and strip correctAnswer before
+    // sending the quiz to the client.
+    match /quizzes/{quizId} {
+      allow read: if isSignedIn();
+      allow write: if isAdmin();
+    }
+
+    // enrollments/{uid_courseId} — a student can only touch their own
+    // enrollment doc; admins can read all of them (Students/Results pages)
+    match /enrollments/{enrollmentId} {
+      allow read: if isSignedIn() && (resource.data.uid == request.auth.uid || isAdmin());
+      allow create: if isSignedIn() && request.resource.data.uid == request.auth.uid;
+      allow update: if isSignedIn() && resource.data.uid == request.auth.uid;
+    }
+  }
+}

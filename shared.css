@@ -1,0 +1,96 @@
+.lg-progress {
+  width: 100%;
+  background: #e9ecef;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+}
+.lg-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #0b5cfe, #1066e7);
+  border-radius: 20px;
+  transition: width 0.4s ease;
+}
+.lg-progress-label {
+  font-size: 12px;
+  color: #6b6375;
+  margin-left: 6px;
+}
+
+.lg-empty {
+  text-align: center;
+  padding: 60px 20px;
+  color: #8a8594;
+}
+.lg-empty i {
+  font-size: 2.5rem;
+  color: #c8c5cf;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.lg-stat-card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.04);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.lg-stat-card .icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  color: #fff;
+  background: #0b5cfe;
+  flex-shrink: 0;
+}
+.lg-stat-card .value {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #08060d;
+  line-height: 1.1;
+}
+.lg-stat-card .label {
+  font-size: 0.85rem;
+  color: #8a8594;
+}
+
+.lg-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 10px;
+  border-radius: 30px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+.lg-badge.active { background: #e6f4ea; color: #1e7e34; }
+.lg-badge.draft { background: #fdecea; color: #c62828; }
+
+.lg-course-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: rgba(11, 92, 254, 0.9);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+.lg-join-btn {
+  cursor: pointer;
+  color: #08060d;
+  font-size: 0.9rem;
+}
+.lg-join-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
